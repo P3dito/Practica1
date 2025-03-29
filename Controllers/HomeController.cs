@@ -28,4 +28,17 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    [HttpPost]
+        public IActionResult GuardarDatos(string nombre, string documento, ErrorViewModel.MonedaModel model)
+        {
+            var confirmacion = new ErrorViewModel.ConfirmacionModel
+            {
+                Nombre = nombre,
+                Documento = documento,
+                MontoRecibido = model.MontoRecibido,
+                MonedaDestino = model.MonedaDestino
+            };
+            return View("ConfirmacionFinal", confirmacion);
+        }
 }
