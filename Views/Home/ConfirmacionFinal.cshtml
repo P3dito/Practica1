@@ -1,0 +1,11 @@
+@model ErrorViewModel.ConfirmacionModel
+
+
+<div class="container mt-5"></div>
+    <div class="card p-4 shadow">
+        <h2 class="text-center mb-4">Datos de Confirmación</h2>
+        <p><strong>Nombre:</strong> @Model.Nombre</p>
+        <p><strong>DNI/Pasaporte:</strong> @Model.Documento</p>
+        <p><strong>Monto Recibido:</strong> @Model.MontoRecibido @Model.MonedaDestino</p>
+    </div>
+</div>

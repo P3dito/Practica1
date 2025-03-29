@@ -1,0 +1,23 @@
+@model ErrorViewModel.MonedaModel
+
+<div class="container mt-5">
+    <div class="card p-4 shadow">
+        <h2 class="text-center mb-4">Confirmación</h2>
+        <p class="text-center">Recibirás: <strong>@Model.MontoRecibido @Model.MonedaDestino</strong></p>
+        <form asp-action="GuardarDatos" method="post">
+            <input type="hidden" asp-for="MontoEnviado" />
+            <input type="hidden" asp-for="MontoRecibido" />
+            <input type="hidden" asp-for="MonedaOrigen" />
+            <input type="hidden" asp-for="MonedaDestino" />
+            <div class="mb-3">
+                <label class="form-label">Nombre:</label>
+                <input type="text" class="form-control" name="nombre" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">DNI/Pasaporte:</label>
+                <input type="text" class="form-control" name="documento" required />
+            </div>
+            <button type="submit" class="btn btn-success w-100">Generar Boleta</button>
+        </form>
+    </div>
+</div>

@@ -13,4 +13,12 @@ public class ErrorViewModel
         public required string MonedaOrigen { get; set; }
         public required string MonedaDestino { get; set; }
     }
+
+    public class ConfirmacionModel
+    {
+        public required string Nombre { get; set; }
+        public required string Documento { get; set; }
+        public required decimal MontoRecibido { get; set; }
+        public required string MonedaDestino { get; set; }
+    }
 }
